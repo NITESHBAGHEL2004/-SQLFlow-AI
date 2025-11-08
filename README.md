@@ -1,109 +1,109 @@
-SQLFlow AI — LangChain + Gemini-Powered MySQL Assistant
 
-SQLFlow AI is an intelligent SQL assistant built with Streamlit, LangChain, and Google Gemini AI (Free API from Google AI Studio).
-It allows users to chat in natural language and automatically generate, execute, and visualize SQL queries for a connected MySQL database — all without writing a single line of SQL.
 
-🚀 Features
+# 🚀 SQLFlow – AI-Powered SQL Assistant
 
-✅ AI-Powered SQL Generation
-Type queries in plain English (e.g., “Show all employees with salary above 50000”) and get the exact SQL instantly.
+SQLFlow is an **AI-driven SQL Assistant** that converts **natural language queries into SQL** and executes them directly on your database. It makes database interaction **simple, fast, and accessible** for developers, analysts, and even non-technical users.
 
-✅ Automatic Execution
-The generated SQL query runs automatically on your connected MySQL database.
+---
+![alt text](https://github.com/NITESHBAGHEL2004/SQLFlow-AI-SQL-Bot/blob/7e649bef68f02f080d767a86f4fc389a07509097/Screenshot%202025-09-02%20174842.png)
+![alt text](https://github.com/NITESHBAGHEL2004/SQLFlow-AI-SQL-Bot/blob/7e649bef68f02f080d767a86f4fc389a07509097/Screenshot%202025-09-02%20174858.png)
 
-✅ Real-Time Results
-Results are displayed as a clean, interactive table or a success message (for non-select operations).
 
-✅ Gemini AI Integration (Free API)
-Uses Google’s Gemini 2.0 Flash model — fast, accurate, and available on the free tier via Google AI Studio
-.
 
-✅ No Hardcoded API Keys
-You can safely enter your Gemini API key from the sidebar — no .env file needed.
+## 🔹 Features
 
-✅ Error Explanation
-If a query fails, the AI provides a simple explanation and how to fix it.
+* ✅ Convert **plain English → SQL queries**
+* ✅ Execute queries directly on **MySQL**
+* ✅ Instant results in a clean UI
+* ✅ **Error handling & explanations** for failed queries
+* ✅ Secure API key handling with `.env` file
+* ✅ Built with scalability in mind (multi-database support coming soon)
 
-✅ Simple UI
-Powered by Streamlit with a clean chat-like interface.
+---
 
-🏗️ Tech Stack
-Component	Technology Used
-Frontend	Streamlit (Chat UI)
-AI Engine	LangChain + Google Gemini
-Database	MySQL
-Language	Python
-Model	gemini-2.0-flash (Free-tier model)
-⚙️ Installation
-1️⃣ Clone this Repository
-git clone https://github.com/yourusername/sqlflow-ai.git
-cd sqlflow-ai
+## 🔹 Tech Stack
 
-2️⃣ Create Virtual Environment
-python -m venv venv
-source venv/bin/activate   # (Linux/Mac)
-venv\Scripts\activate      # (Windows)
+* **Python** – Core backend logic
+* **LangChain + Google Gemini API** – AI query generation
+* **MySQL** – Database
+* **Streamlit** – Frontend (UI)
+* **dotenv** – For managing environment variables
 
-3️⃣ Install Dependencies
+---
+
+## 🔹 Getting Started
+
+### 1. Clone the repository
+
+```bash
+git clone https://github.com/your-username/sqlflow.git
+cd sqlflow
+```
+
+### 2. Install dependencies
+
+```bash
 pip install -r requirements.txt
+```
 
+### 3. Setup environment variables
 
-Example requirements.txt
+Create a `.env` file in the root directory:
 
-streamlit
-mysql-connector-python
-pandas
-langchain
-langchain-core
-langchain-community
-langchain-google-genai
+```env
+DB_HOST=localhost
+DB_USER=root
+DB_PASSWORD=yourpassword
+DB_NAME=yourdbname
+GEMINI_API_KEY=your_gemini_api_key
+```
 
-🔑 Get a Free Gemini API Key
+### 4. Run the app
 
-Go to Google AI Studio
+```bash
+streamlit run app.py
+```
 
-Click “Create API Key”
+---
 
-Copy your API key — it looks like this:
+## 🔹 Usage
 
-AIzaSyD2s52ehK-udDMLxAcodvliMaqqTYLsZeY
+1. Start the app.
+2. Enter a natural language query, e.g.:
 
-🧠 Run the App
-streamlit run index.py
+   ```
+   Show all students in class 10
+   ```
+3. SQLFlow will generate:
 
+   ```sql
+   SELECT * FROM students WHERE class = 10;
+   ```
+4. Results are displayed instantly.
 
-Then open the provided local URL (e.g., http://localhost:8501) in your browser.
+---
 
-🧰 Usage Guide
+## 🔹 Roadmap
 
-Enter Your API Key
+* 🔜 Support for PostgreSQL & SQLite
+* 🔜 AI-powered data visualization dashboards
+* 🔜 Role-based authentication system
+* 🔜 Export results to Excel/CSV
 
-In the sidebar, paste your Gemini API key.
+---
 
-Connect to MySQL
+## 🔹 Screenshots (Optional)
 
-Enter your MySQL credentials (Host, Port, User, Password, Database).
+*Add your Streamlit UI screenshots here*
 
-Click “Connect”.
+---
 
-Start Asking!
+## 🔹 Contributing
 
-Example prompts:
+Pull requests are welcome! For major changes, open an issue first to discuss what you’d like to change.
 
-“Show all tables.”
+---
 
-“Create a table named employees with id, name, and salary.”
+## 🔹 License
 
-“Insert random data into employees.”
-
-“Show employees with salary > 50000.”
-
-“Update salary where id = 2.”
-
-“Delete records where salary < 40000.”
-
-View Results Instantly
-
-The generated SQL and result table are shown together.
-
-No natural language explanation (cleaner UI).
+This project is licensed under the **MIT License**.
